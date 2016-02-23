@@ -104,7 +104,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  
 	  .pink .outputscontent {
         background: linear-gradient(white, #F48FB1);
-      }-->
+      }--->
 
 
 
@@ -122,16 +122,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						<li><paper-button  class="custom light-blue">Turn light on</paper-button></li>						
 						<li><paper-button  class="custom light-blue">Turn light off</paper-button></li>
 					</ul>
+						<template is="dom-repeat" items="{{descriptors.commands}}">
+
+							<li><paper-button  class="custom light-blue">{{item.label}}</paper-button> </li>	
+						</template>
 				</div>
 			  </paper-header-panel>
 			  
 			  <paper-header-panel mode="waterfall-tall" class="pink paper-header-panel-outputs">
 				<div class="paper-header">Outputs</div>
+
+				<div>
 					<ul>
 						<li><iron-label>Light</iron-label> <p class="state"> ON </p> </li>						
 						<li><iron-label>AC</iron-label>  <p class="state"> OFF </p></li>
 					</ul>
-				<div class="outputscontent">
 				</div>
 			  </paper-header-panel>
 			</section>
@@ -140,3 +145,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </body>
 
 </html>
+
+
+<script>
+
+	var descriptors = {
+	"commands": [{
+		"name": "turnLightOn",
+		"label": "Turn light on"
+	},
+	{
+		"name": "turnLightOff",
+		"label": "Turn light off"
+	},
+	{
+		"name": "turnAcOff",
+		"label": "Turn ac off"
+	},
+	{
+		"name": "ac21",
+		"label": "Set AC to 21 degrees"
+	},
+	{
+		"name": "ac28",
+		"label": "Set AC to 28 degrees"
+	}]
+	}
+	this.descriptors = descriptors;
+</script>
