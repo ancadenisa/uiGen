@@ -1,0 +1,12 @@
+{
+	"outputs": [{
+		"name": "light",
+		"label": "Light",
+		"value": "ON"
+	},
+	{
+		"name": "AC",
+		"label": "AC",
+		"value": "21"
+	}]
+}

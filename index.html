@@ -1,0 +1,109 @@
+	<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="en">
+
+<head>
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style">
+
+	  paper-button.light-blue {
+		background-color: #1E88E5;
+		color: white;
+	  }
+	  
+	  paper-button.custom {
+		margin-bottom: 10%;
+	  }
+	  paper-button.custom:hover {
+		  background-color: var(--paper-indigo-100);
+	  }	  
+      paper-header-panel {
+        float: left;
+        width: 20%;
+        height: 300px;
+        margin-left: 35%;
+        @apply(--shadow-elevation-2dp);
+      }
+	  .paper-header-panel-outputs {
+        height: 200px;
+        margin-top: 20px;
+        @apply(--shadow-elevation-2dp);
+      }
+      .paper-header {
+        height: 80px;
+        font-size: 26px;
+        line-height: 60px;
+        padding: 0 10px;
+        color: white;
+      }
+	  
+      .content {
+        height: 300px;
+      }
+	  .outputscontent {
+        height: 200px;
+      }
+      .cover {
+        margin: 60px;
+      }
+
+      .green .paper-header {
+        background-color: var(--paper-green-500);
+      }
+
+      .pink .paper-header {
+        background-color: var(--paper-pink-a200);
+      }
+	  
+      <!---.green .content {
+        background: linear-gradient(white, #c8e6c9);
+      }
+	  
+	  
+	  .pink .outputscontent {
+        background: linear-gradient(white, #F48FB1);
+      }-->
+
+
+  </style>
+</head>
+
+<body unresolved>
+  <span id="browser-sync-binding"></span>
+        <div class="content">
+			<section>			  
+			  <paper-header-panel mode="waterfall" class="green">
+				<div class="paper-header">Commands</div>
+				<div class="content">
+					<ul>
+						<li><paper-button  class="custom light-blue">Turn light on</paper-button></li>						
+						<li><paper-button  class="custom light-blue">Turn light off</paper-button></li>
+					</ul>
+				</div>
+			  </paper-header-panel>
+			  
+			  <paper-header-panel mode="waterfall-tall" class="pink paper-header-panel-outputs">
+				<div class="paper-header">Outputs</div>
+				<div class="outputscontent">
+				</div>
+			  </paper-header-panel>
+			</section>
+        </div>
+
+</body>
+
+</html>

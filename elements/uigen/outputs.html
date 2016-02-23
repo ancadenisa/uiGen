@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
+<dom-module id="outputs-gen">
+  <template>
+		<style is="custom-style">
+		  :host {
+			display: block;
+		  }
+
+		  span {
+			@apply(--paper-font-body2);
+		  }
+			.horizontal-section {
+			  padding: 0 !important;
+			}
+
+			.paper-item{
+				font-size: 20px;
+				font-family: 'Roboto';
+				color: slategrey;
+			}
+			paper-item {
+			  --paper-item: {
+				cursor: pointer;
+				border-bottom: 1px solid darkgrey;
+			  };
+			}
+		</style>
+		<ul>
+		  <div class="horizontal-section-container">
+			<div>
+			  <div class="horizontal-section">
+			  						<paper-menu>
+					<template is="dom-repeat" items="{{outputs}}">
+
+							<paper-item>
+								<div> <span  class="paper-item">{{item.label}}:  {{item.value}} </span> </div>
+							</paper-item>
+					</template>
+											</paper-menu>
+			  </div>
+			</div>
+		  </div>           
+		</ul>
+	</template>
+</dom-module>
+
+<script>
+
+    (function() {
+		'usestrict';Polymer({
+		is: "outputs-gen",
+		ready: function() {
+			$.get('outputs.json',function(data){
+				this.outputs = data.outputs;
+				console.log(this.outputs);
+		 }.bind(this));
+		}
+	});
+	})();
+</script>

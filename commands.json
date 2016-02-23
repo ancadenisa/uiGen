@@ -1,0 +1,22 @@
+{
+	"commands": [{
+		"name": "turnLightOn",
+		"label": "Turn light on"
+	},
+	{
+		"name": "turnLightOff",
+		"label": "Turn light off"
+	},
+	{
+		"name": "turnAcOff",
+		"label": "Turn ac off"
+	},
+	{
+		"name": "ac21",
+		"label": "Set AC to 21 degrees"
+	},
+	{
+		"name": "ac28",
+		"label": "Set AC to 28 degrees"
+	}]
+}

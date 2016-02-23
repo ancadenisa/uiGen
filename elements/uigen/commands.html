@@ -1,0 +1,63 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
+<dom-module id="commands-gen">
+  <template>
+		<style is="custom-style">
+		  :host {
+			display: block;
+		  }
+
+		  span {
+			@apply(--paper-font-body1);
+		  }
+			.horizontal-section {
+			  padding: 0 !important;
+			}
+
+			paper-item {
+			  --paper-item: {
+				cursor: pointer;
+				border-bottom: 1px solid #000;
+			  };
+			}
+			.paper-item{
+				font-size: 20px;
+				font-family: 'Roboto';
+				color: darkgreen;
+			}
+		</style>
+		<ul>
+		  <div class="horizontal-section-container">
+			<div>
+			  <div class="horizontal-section">
+					<paper-menu>
+						<template is="dom-repeat" items="{{commands}}">
+
+								<paper-item>
+									<div> <span  class="paper-item">{{item.label}}</span> </div>
+								</paper-item>
+						</template>
+					</paper-menu>
+			  </div>
+			</div>
+		  </div>           
+		</ul>
+	</template>
+</dom-module>
+
+<script>
+
+    (function() {
+		'usestrict';Polymer({
+		is: "commands-gen",
+		ready: function() {
+			$.get('commands.json',function(data){
+				this.commands = data.commands;
+				console.log(this.commands);
+		 }.bind(this));
+		}
+	});
+	})();
+</script>
